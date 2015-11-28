@@ -105,10 +105,14 @@ for j=1:size(theta,2)
     d(j,:) = [theta(j)*180/pi Ex(j) Ey(j) Nuxy(j) Nuyx(j) mx(j) my(j) Gxy(j)];
 end
 
+
+hold off
+cla(handles.axes1);
+set(gca,'fontsize',15)
+hold on
 plot(theta*180/pi,Ex/EL,theta*180/pi,Gxy/GLT,theta*180/pi,Nuxy,theta*180/pi,mx,theta*180/pi,my);
 xlabel('\theta');
 legend('E_{x}/E_{L}','G_{xy}/G_{LT}','\nu_{xy}','m_x','m_y','Location','Northwest');
-
 h = handles.uitable1;
 set(h,'Data',d,'ColumnName',cname);
 

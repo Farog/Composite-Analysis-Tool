@@ -97,6 +97,10 @@ cname = {'Theta','Ex','Ey','Gxy','Nuxy','mx','my'};
 h = handles.uitable1;
 set(h,'Data',d,'ColumnName',cname);
 
+cla(handles.axes1);
+set(gca,'fontsize',15)
+hold on
+
 plot(d(:,1),d(:,2)/EL, d(:,1),d(:,4)/GLT, d(:,1),d(:,5), d(:,1),d(:,6), d(:,1),d(:,7));
 xlabel('\theta');
 legend('E_{x}/E_{L}','G_{xy}/G_{LT}','\nu_{xy}','m_x','m_y','Location','Northwest');
